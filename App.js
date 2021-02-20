@@ -1,0 +1,17 @@
+import React,{Component} from 'react'
+import {View} from 'react-native'
+import Nav from './src/nav'
+import Geo from './src/utils/Geo'
+export default class App extends Component{
+  async componentDidMount(){
+    const res=await Geo.getCurrentPosition()
+    console.log(res);
+  }
+  render(){
+    return (
+      <View style={{flex:1}}>
+        <Nav></Nav>
+      </View>
+    )
+  }
+}
